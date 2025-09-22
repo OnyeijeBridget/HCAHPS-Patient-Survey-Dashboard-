@@ -19,6 +19,73 @@ Quietness of the Hospital Environment
 Care Transitions and more
 
 ---
+**Features of the Datasets**
+
+For this project, I worked with multiple tables from the HCAHPS dataset, covering patient experience survey results at the national, state, and facility level.
+
+1. Reports Table
+
+      Release Period (PK): The reporting period (e.g., 07_2019).
+
+      Start Date / End Date: The time range for each survey period.
+
+2. States Table
+
+      State (PK): Two-letter state code.
+      
+      State Name: Full name of the state.
+      
+      Region: Census region grouping for states.
+
+3. Measures Table
+      
+      Measure ID (PK): Unique identifier for each measure.
+      
+      Measure: The type of patient experience being measured (e.g., Nurse Communication, Cleanliness).
+      
+      Type: Category of the measure.
+
+4. Questions Table
+
+      Question Num: Identifier for each survey question.
+      
+      Measure ID (FK): Links the question to its measure.
+      
+      Question: The actual survey question asked.
+
+      Bottom-box / Middle-box / Top-box Answer: The response categories used in HCAHPS reporting.
+
+5. National Results Table
+      
+      Release Period (FK): Links to the reporting period.
+      
+      Measure ID (FK): Links to the measure being evaluated.
+      
+      Bottom-box %, Middle-box %, Top-box %: National percentages of patient responses.
+
+6. State Results Table
+
+      Release Period (FK): Links to the reporting period.
+      
+      State (FK): Links to the state.
+      
+      Measure ID (FK): Links to the measure.
+
+      Bottom-box %, Middle-box %, Top-box %: Percentages of responses at the state level.
+
+7. Responses Table
+
+      Release Period (FK): Reporting period.
+
+      State (FK): State code.
+      
+      Facility ID: Unique identifier for each hospital/facility.
+      
+      Completed Surveys: Number of completed patient surveys.
+      
+      Response Rate (%): Percentage of patients who responded.
+
+---
 **Questions:**
 This project answers four guiding questions:
 
