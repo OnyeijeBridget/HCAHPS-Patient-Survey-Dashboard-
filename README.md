@@ -115,3 +115,11 @@ Data Modeling → Star schema with fact and dimension tables
 2. Nurse & Doctor Communication are strong points across the decade.
 3. Communication about Medicines, Care Transition, and Quietness of Hospital consistently underperform.
 4. State-level analysis revealed wide variation across regions, with some outperforming national averages while others lagged.
+
+## 🖼 Dashboard Preview  
+
+### National Insights (Page 1)  
+![National Dashboard](screenshots/national_dashboard.png)  
+
+### State Insights (Page 2)  
+![State Dashboard](screenshots/state_dashboard.png)  
