@@ -119,7 +119,7 @@ Data Modeling → Star schema with fact and dimension tables
 ## 🖼 Dashboard Preview  
 
 ### National Insights (Page 1)  
-![National Dashboard](screenshots/national_dashboard.png)  
+![National Dashboard]([(https://github.com/OnyeijeBridget/HCAHPS-Patient-Survey-Dashboard-/blob/main/National%20Results.png])  
 
 ### State Insights (Page 2)  
 ![State Dashboard](screenshots/state_dashboard.png)  
