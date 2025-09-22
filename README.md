@@ -104,7 +104,7 @@ Power BI → Dashboard design & storytelling
 
 Power Query → Data cleaning and transformation
 
-DAX → Custom calculations (NPS, YoY change, progress rankings)
+DAX → Custom calculations (NPS, average response rate)
 
 Data Modeling → Star schema with fact and dimension tables
 
