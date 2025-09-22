@@ -6,30 +6,42 @@ This project analyzes 9 years of Hospital Consumer Assessment of Healthcare Prov
 ---
 **📊 Project Overview**
 
-The HCAHPS survey is the first national, standardized survey of patients’ perspectives of hospital care. It measures domains such as:
+The Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) is the first national, standardized survey of patients’ perspectives of hospital care in the United States. It provides critical insights into how patients experience different aspects of their care, from nurse and doctor communication to hospital cleanliness, discharge information, and transitions of care.
 
-Nurse Communication
+This project set out to analyze 9 years of HCAHPS survey data (2013–2022) in order to better understand how patient experience has evolved nationally, and to highlight where hospitals are improving versus where they continue to face challenges. The analysis was guided by four key questions:
 
-Doctor Communication
+**1. Have hospitals improved in their quality of care over the past 9 years?**
 
-Discharge Information
+**2. Which areas of care have made the most progress?**
 
-Quietness of the Hospital Environment
+**3. How have scores changed over time?**
 
-Care Transitions and more
+**4. What recommendations can help hospitals further improve patient experience?**
+
+---
+**To answer these questions, I designed a two-page interactive Power BI dashboard:**
+
+1. The first page focuses on national-level results, tracking long-term trends and highlighting the strongest and weakest measures.
+2. The second page drills down into state-level insights, revealing regional variations and allowing comparisons across states and measures.
+
+---
+**The project followed a structured data workflow:**
+
+1. Data modeling using a star schema with fact tables (National Results, State Results, Responses) and dimension tables (Measures, Questions, States, Dates).
+2. Custom metrics created in DAX, including an NPS-style score (Top-box % – Bottom-box %), year-over-year changes, and progress rankings across measures.
 
 ---
 **Features of the Datasets**
 
 For this project, I worked with multiple tables from the HCAHPS dataset, covering patient experience survey results at the national, state, and facility level.
 
-1. Reports Table
+**1. Reports Table:**
 
       Release Period (PK): The reporting period (e.g., 07_2019).
-
+      
       Start Date / End Date: The time range for each survey period.
 
-2. States Table
+**2. States Table:**
 
       State (PK): Two-letter state code.
       
@@ -37,7 +49,7 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
       
       Region: Census region grouping for states.
 
-3. Measures Table
+**3. Measures Table:**
       
       Measure ID (PK): Unique identifier for each measure.
       
@@ -45,7 +57,7 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
       
       Type: Category of the measure.
 
-4. Questions Table
+**4. Questions Table:**
 
       Question Num: Identifier for each survey question.
       
@@ -55,7 +67,7 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
 
       Bottom-box / Middle-box / Top-box Answer: The response categories used in HCAHPS reporting.
 
-5. National Results Table
+**5. National Results Table:**
       
       Release Period (FK): Links to the reporting period.
       
@@ -63,7 +75,7 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
       
       Bottom-box %, Middle-box %, Top-box %: National percentages of patient responses.
 
-6. State Results Table
+**6. State Results Table:**
 
       Release Period (FK): Links to the reporting period.
       
@@ -73,7 +85,7 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
 
       Bottom-box %, Middle-box %, Top-box %: Percentages of responses at the state level.
 
-7. Responses Table
+**7. Responses Table:**
 
       Release Period (FK): Reporting period.
 
@@ -84,15 +96,6 @@ For this project, I worked with multiple tables from the HCAHPS dataset, coverin
       Completed Surveys: Number of completed patient surveys.
       
       Response Rate (%): Percentage of patients who responded.
-
----
-**Questions:**
-This project answers four guiding questions:
-
-1. Have hospitals improved in their quality of care over the past 9 years?
-2. Which areas of care have made the most progress?
-3. How have scores changed over time?
-4. What recommendations can help hospitals further improve patient experience?
 
 ---
 **🛠 Tools & Skills Used**
