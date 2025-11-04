@@ -1,10 +1,10 @@
-# HCAHPS-Patient-Survey-Dashboard-
+### HCAHPS-Patient-Survey-Dashboard-
 
 
 This project analyzes 9 years of Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) survey data to uncover trends in patient experience across U.S. hospitals. Using Power BI and DAX, I created a two-page interactive dashboard that highlights both national and state-level insights.
 
 ---
-**📊 Project Overview**
+## 📊 Project Overview
 
 The Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) is the first national, standardized survey of patients’ perspectives of hospital care in the United States. It provides critical insights into how patients experience different aspects of their care, from nurse and doctor communication to hospital cleanliness, discharge information, and transitions of care.
 
@@ -19,6 +19,8 @@ This project set out to analyze 9 years of HCAHPS survey data (2013–2022) in o
 **4. What recommendations can help hospitals further improve patient experience?**
 
 ---
+### Methodology
+
 **To answer these questions, I designed a two-page interactive Power BI dashboard:**
 
 1. The first page focuses on national-level results, tracking long-term trends and highlighting the strongest and weakest measures.
@@ -31,7 +33,8 @@ This project set out to analyze 9 years of HCAHPS survey data (2013–2022) in o
 2. Custom metrics created in DAX, including an NPS-style score (Top-box % – Bottom-box %), year-over-year changes, and progress rankings across measures.
 
 ---
-**Features of the Datasets**
+
+## Features of the Datasets
 
 For this project, I worked with multiple tables from the HCAHPS dataset, covering patient experience survey results at the national, state, and facility level.
 
