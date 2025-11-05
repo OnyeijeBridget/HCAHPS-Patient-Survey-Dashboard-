@@ -1,129 +1,167 @@
-### HCAHPS PATIENT SURVEY ANALYSIS
+# 🏥 **HCAHPS Patient Survey Analysis | Power BI**
 
-
-This project analyzes 9 years of Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) survey data to uncover trends in patient experience across U.S. hospitals. Using Power BI and DAX, I created a two-page interactive dashboard that highlights both national and state-level insights.
-
----
-## 📊 Project Overview:
-
-The Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS) is the first national, standardized survey of patients’ perspectives of hospital care in the United States. It provides critical insights into how patients experience different aspects of their care, from nurse and doctor communication to hospital cleanliness, discharge information, and transitions of care.
-
-This project set out to analyze 9 years of HCAHPS survey data (2013–2022) in order to better understand how patient experience has evolved nationally, and to highlight where hospitals are improving versus where they continue to face challenges. The analysis was guided by four key questions:
-
-**1. Have hospitals improved in their quality of care over the past 9 years?**
-
-**2. Which areas of care have made the most progress?**
-
-**3. How have scores changed over time?**
-
-**4. What recommendations can help hospitals further improve patient experience?**
-
-(**Data Source:** The data was gotten from [Maven Analytics](https://mavenanalyticcahps-patient-survey))
+<p align="center">
+  <img src="https://img.shields.io/badge/Tool-Power%20BI-yellow?style=flat-square&logo=powerbi" alt="Power BI Badge"/>
+  <img src="https://img.shields.io/badge/Skill-DAX-blue?style=flat-square" alt="DAX Badge"/>
+  <img src="https://img.shields.io/badge/Focus-Healthcare%20Analytics-green?style=flat-square&logo=data:image/svg+xml;base64," alt="Healthcare Analytics Badge"/>
+  <img src="https://img.shields.io/badge/Platform-Maven%20Analytics-orange?style=flat-square" alt="Maven Analytics Badge"/>
+</p>
 
 ---
-## Features of the Dataset:
 
-For this project, I worked with multiple tables from the HCAHPS dataset, covering patient experience survey results at the national, state, and facility level.
+## 📘 **Overview**
+This project analyzes **9 years of Hospital Consumer Assessment of Healthcare Providers and Systems (HCAHPS)** survey data to uncover trends in patient experience across U.S. hospitals.  
 
-## Reports Table:
-
-     Release Period (PK): The reporting period (e.g., 07_2019).
-      
-      Start Date / End Date: The time range for each survey period.
-
-## States Table:
-
-      State (PK): Two-letter state code.
-      
-      State Name: Full name of the state.
-      
-      Region: Census region grouping for states.
-
-## Measures Table:
-      
-      Measure ID (PK): Unique identifier for each measure.
-      
-      Measure: The type of patient experience being measured (e.g., Nurse Communication, Cleanliness).
-      
-      Type: Category of the measure.
-
-## Questions Table:
-
-      Question Num: Identifier for each survey question.
-      
-      Measure ID (FK): Links the question to its measure.
-      
-      Question: The actual survey question asked.
-
-      Bottom-box / Middle-box / Top-box Answer: The response categories used in HCAHPS reporting.
-
-## National Results Table:
-      
-      Release Period (FK): Links to the reporting period.
-      
-      Measure ID (FK): Links to the measure being evaluated.
-      
-      Bottom-box %, Middle-box %, Top-box %: National percentages of patient responses.
-
-## State Results Table:
-
-      Release Period (FK): Links to the reporting period.
-      
-      State (FK): Links to the state.
-      
-      Measure ID (FK): Links to the measure.
-
-      Bottom-box %, Middle-box %, Top-box %: Percentages of responses at the state level.
-
-## Responses Table:
-
-      Release Period (FK): Reporting period.
-
-      State (FK): State code.
-      
-      Facility ID: Unique identifier for each hospital/facility.
-      
-      Completed Surveys: Number of completed patient surveys.
-      
-      Response Rate (%): Percentage of patients who responded.
----
-
-## Methodology:
-
-## To answer these questions, I designed a two-page interactive Power BI dashboard:
-
-1. The first page focuses on national-level results, tracking long-term trends and highlighting the strongest and weakest measures.
-2. The second page drills down into state-level insights, revealing regional variations and allowing comparisons across states and measures.
-
-
-## The project followed a structured data workflow:
-
-1. Data modeling using a star schema with fact tables (National Results, State Results, Responses) and dimension tables (Measures, Questions, States, Dates).
-2. Custom metrics created in DAX, including an NPS-style score (Top-box % – Bottom-box %), year-over-year changes, and progress rankings across measures.
+Using **Power BI and DAX**, I created a **two-page interactive dashboard** that tracks both national and state-level performance, providing clear visibility into areas of excellence and opportunities for improvement.
 
 ---
-## Tools & Skills Used:
 
-Power BI → Dashboard design & storytelling
+## 🎯 **Project Objective**
+The **HCAHPS survey** is the first national, standardized measure of patients’ perspectives on hospital care in the United States.  
 
-Power Query → Data cleaning and transformation
+This project set out to:
+1. 📈 Assess how hospital quality of care evolved from **2013–2022**  
+2. 🔍 Identify areas of care showing the most improvement  
+3. ⏳ Examine changes in patient experience over time  
+4. 💡 Recommend actions to improve overall satisfaction  
 
-DAX → Custom calculations (NPS, average response rate)
-
-Data Modeling → Star schema with fact and dimension tables
+📊 **Data Source:** [Maven Analytics](https://mavenanalytics.io/data-playground)
 
 ---
-## Key Insights:
 
-1. Patient experience improved nationally from 2013–2020, peaked in 2021, then dipped post-pandemic.
-2. Nurse & Doctor Communication are strong points across the decade.
-3. Communication about Medicines, Care Transition, and Quietness of Hospital consistently underperform.
-4. State-level analysis revealed wide variation across regions, with some outperforming national averages while others lagged.
+<details>
+<summary><b>🧾 Dataset Structure (Click to Expand)</b></summary>
 
-## Dashboard Preview:  
+### 🧩 **Reports Table**
+- `Release Period (PK)` – Reporting period (e.g., 07_2019)  
+- `Start Date / End Date` – Time range for each survey  
 
-### National Insights (Page 1)  
-![National Dashboard](https://github.com/OnyeijeBridget/HCAHPS-Patient-Survey-Dashboard-/blob/main/National%20Results.png])  
+### 🗺️ **States Table**
+- `State (PK)` – Two-letter state code  
+- `State Name` – Full name of state  
+- `Region` – Census region grouping  
 
-### State Insights (Page 2)  
-![State Dashboard](https://github.com/OnyeijeBridget/HCAHPS-Patient-Survey-Dashboard-/blob/main/State%20Results.png])
+### 📏 **Measures Table**
+- `Measure ID (PK)` – Unique identifier for each measure  
+- `Measure` – Patient experience metric (e.g., Nurse Communication)  
+- `Type` – Measure category  
+
+### 💬 **Questions Table**
+- `Question Num` – Identifier  
+- `Measure ID (FK)` – Linked measure  
+- `Question` – Survey question text  
+- `Bottom-box / Middle-box / Top-box %` – Response categories  
+
+### 🌍 **National Results Table**
+- `Release Period (FK)` – Reporting period reference  
+- `Measure ID (FK)` – Measure reference  
+- Response % fields for bottom, middle, and top-box categories  
+
+### 🏛️ **State Results Table**
+- `Release Period (FK)` – Reporting period reference  
+- `State (FK)` – State reference  
+- `Measure ID (FK)` – Measure reference  
+- Response % by state  
+
+### 🧮 **Responses Table**
+- `Facility ID` – Hospital identifier  
+- `Completed Surveys` – Count of valid responses  
+- `Response Rate (%)` – Participation percentage  
+
+</details>
+
+---
+
+## ⚙️ **Methodology**
+To answer the research questions, I developed a **two-page Power BI dashboard** structured as follows:
+
+| Page | Focus | Description |
+|------|--------|-------------|
+| **Page 1** | National Overview | Long-term trends, top & bottom measures |
+| **Page 2** | State Insights | Regional comparisons and performance deviations |
+
+### 🧠 Workflow Steps
+1. **Data Modeling:** Built a **star schema** linking fact tables (National, State, Responses) with dimensions (Measures, Questions, States, Dates).  
+2. **Power Query Transformation:** Cleaned data and standardized naming conventions.  
+3. **DAX Calculations:** Created metrics like:  
+   - `NPS Score = Top-box % – Bottom-box %`  
+   - Year-over-Year (%)  
+   - Measure Ranking by Improvement  
+4. **Dashboard Design:** Used card visuals, KPIs, slicers, and dynamic filtering for interactivity.  
+
+---
+
+## 🧰 **Tools & Skills Demonstrated**
+
+| 🧩 Skill | 💼 Description |
+|-----------|----------------|
+| **Power BI** | Data modeling, visualization, dashboard creation |
+| **Power Query** | Data cleaning, merging, and transformation |
+| **DAX** | Custom metrics (NPS, YoY change, ranking) |
+| **Data Modeling** | Star schema relationships for optimized performance |
+| **Storytelling** | Presenting insights through clean, contextual visuals |
+
+---
+
+## 💡 **Key Insights**
+- 🟢 **Patient experience improved** nationally from 2013–2020, peaked in 2021, then slightly declined post-pandemic.  
+- 💬 **Nurse and Doctor Communication** consistently ranked highest in satisfaction.  
+- 🔴 **Communication About Medicines** and **Quietness of Environment** scored lowest.  
+- 🧭 **Regional variation** revealed that hospitals in certain states outperformed national averages, suggesting localized best practices.  
+
+---
+
+## 🩺 **Recommendations**
+✅ Invest in **communication training** for clinical staff  
+✅ Improve **pain management protocols** and patient comfort measures  
+✅ Reinforce **cleanliness and noise control policies**  
+✅ Continue tracking HCAHPS data for continuous quality improvement  
+
+---
+
+## 📊 **Dashboard Preview**
+
+### 🗺️ National Insights (Page 1)
+![National Dashboard](https://github.com/OnyeijeBridget/HCAHPS-Patient-Survey-Dashboard-/blob/main/National%20Results.png)
+
+### 🧭 State Insights (Page 2)
+![State Dashboard](https://github.com/OnyeijeBridget/HCAHPS-Patient-Survey-Dashboard-/blob/main/State%20Results.png)
+
+---
+
+<details>
+<summary><b>📂 Repository Files</b></summary>
+
+| File | Description |
+|------|--------------|
+| `HCAHPS_Patient_Experience_Dashboard.pbix` | Power BI project file |
+| `HCAHPS_Dataset.xlsx` | Maven Analytics dataset |
+| `Project_Summary.pdf` | PDF summary of visuals and insights |
+| `National Results.png` / `State Results.png` | Dashboard snapshots |
+
+</details>
+
+---
+
+## 🏁 **Conclusion**
+This project demonstrates how **data analytics can drive hospital quality improvements** by visualizing patient feedback across time and geography.  
+The interactive dashboard supports **evidence-based decision-making** to enhance patient satisfaction and healthcare delivery outcomes.
+
+---
+
+## 🧠 **Skills Highlight**
+`Power BI` • `DAX` • `Data Modeling` • `Healthcare Analytics` • `Data Storytelling` • `Power Query`
+
+---
+
+## 📬 **Contact**
+**Bridget Onyeije**  
+📍 Nigeria  
+💼 [LinkedIn](https://www.linkedin.com/in/bridget-onyeije)  
+📊 [GitHub Portfolio](https://github.com/OnyeijeBridget)  
+
+---
+
+<p align="center">
+  ✨ <i>Turning healthcare data into meaningful insights that improve patient experience.</i> ✨
+</p>
